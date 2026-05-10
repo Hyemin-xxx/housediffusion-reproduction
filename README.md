@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 한 줄 요약
+## SUMMARY
 
 원본 코드는 NVIDIA CUDA 전용으로, Apple Silicon에서 그대로 동작하지 않습니다. 본 저장소는 **CUDA → MPS 포팅 + dtype 호환성 수정 + 데이터 로더 수정**을 통해 M1에서 추론 파이프라인을 end-to-end 동작시킨 결과물입니다.
 
@@ -16,7 +16,7 @@
 
 ---
 
-## 🖥️ 실행 환경
+## 실행 환경
 
 | 항목 | 논문 원본 | 본 재현 |
 |---|---|---|
@@ -28,7 +28,7 @@
 
 ---
 
-## 🚀 빠른 시작
+## 빠른 시작
 
 ```bash
 # 1. 환경 생성
@@ -65,7 +65,7 @@ open outputs/set8/png/
 
 ---
 
-## 🔧 원본 코드 대비 수정 사항
+## 원본 코드 대비 수정 사항
 
 ### 1. `scripts/image_sample.py` — 전체 재작성
 
@@ -124,7 +124,7 @@ export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
 
 ---
 
-## 📊 실행 결과
+## 실행 결과
 
 ### 실행 로그 (MacBook Air M1, 16GB)
 
@@ -156,7 +156,7 @@ done. outputs at outputs/set8
 
 ---
 
-## 🔍 결과 분석
+## 결과 분석
 
 ### 관찰
 
@@ -197,7 +197,7 @@ type 8 (Study):   486회   ← 이상하게 많음
 
 ---
 
-## 📁 저장소 구조
+## 저장소 구조
 
 ```
 housediffusion-reproduction/
@@ -217,7 +217,7 @@ housediffusion-reproduction/
 
 ---
 
-## 🎓 배운 점
+## 배운 점
 
 1. **벤더 락인 코드 포팅의 핵심은 dtype 호환성** — CUDA→MPS는 디바이스 교체보다 float64↔float32 처리가 훨씬 까다롭다.
 2. **데이터 품질이 모델보다 우선** — 사전학습 모델도 도메인 밖 입력에는 의미있는 결과를 내지 못한다.
@@ -225,7 +225,7 @@ housediffusion-reproduction/
 
 ---
 
-## 🛣️ 향후 계획
+## 향후 계획
 
 - **단기**: RPLAN 라이센스 도착 시 동일 파이프라인으로 정식 재현 (코드 변경 불필요)
 - **중기**: MagicPlan 원본 도착 시 라벨 매핑 검증된 변환기 작성
@@ -233,10 +233,10 @@ housediffusion-reproduction/
 
 ---
 
-## 📜 라이센스
+## 라이센스
 
 원본 코드는 [원본 저장소 라이센스](https://github.com/aminshabani/house_diffusion) 를 따릅니다. 본 재현 저장소의 수정 사항은 동일 라이센스 하에 공개합니다.
 
-## 🙏 Acknowledgement
+## Acknowledgement
 
 원본 논문 저자: Mohammad Amin Shabani, Sepidehsadat Hosseini, Yasutaka Furukawa (Simon Fraser University)
