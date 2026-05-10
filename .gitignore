@@ -6,6 +6,7 @@ processed_rplan/
 outputs/
 ckpts/
 *.pyc
+*.bak*
 __pycache__/
 .DS_Store
 
